@@ -5,6 +5,9 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: 'https://demo.productionready.io',
+    // baseUrl: 'https://demo.productionready.io',
+    baseUrl: 'https://admin-demo.nopcommerce.com/',
+    video: true,
+    videoCompression: 20,
   },
 });
