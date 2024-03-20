@@ -3,8 +3,9 @@ describe('Task #2', () => {
   beforeEach(() => {
     cy.login();
 
-    cy.get('.nav-item').contains('Catalog').click();
-    cy.get('.nav-link').contains('Products').click({ force: true });
+    cy.contains('Catalog').click().click({ force: true });
+    cy.wait(1000);
+    cy.contains('Products').click();
 
     //add product
     cy.contains('Add new').click();
@@ -21,8 +22,9 @@ describe('Task #2', () => {
   });
 
   it.only('D- Validate that the user can delete product', () => {
-    cy.get('.nav-item').contains('Catalog').click();
-    cy.get('.nav-link').contains('Products').click({ force: true });
+    cy.contains('Catalog').click().click({ force: true });
+    cy.wait(1000);
+    cy.contains('Products').click();
 
     //search for product
     cy.get('#SearchProductName').type('Laptop123');

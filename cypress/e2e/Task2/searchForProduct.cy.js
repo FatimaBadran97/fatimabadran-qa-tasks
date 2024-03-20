@@ -3,8 +3,9 @@ describe('Task #2', () => {
   before(() => {
     cy.login();
 
-    cy.get('.nav-item').contains('Catalog').click();
-    cy.get('.nav-link').contains('Products').click({ force: true });
+    cy.contains('Catalog').click().click({ force: true });
+    cy.wait(1000);
+    cy.contains('Products').click();
 
     cy.contains('Add new').click();
     cy.get('#Name').type('Laptop123');
@@ -21,8 +22,9 @@ describe('Task #2', () => {
   });
 
   it('C- Validate that the user can search for a product', () => {
-    cy.get('.nav-item').contains('Catalog').click();
-    cy.get('.nav-link').contains('Products').click({ force: true });
+    cy.contains('Catalog').click().click({ force: true });
+    cy.wait(1000);
+    cy.contains('Products').click();
     //actions
     cy.get('#SearchProductName').type('Laptop123');
     cy.screenshot({ capture: 'runner' });
