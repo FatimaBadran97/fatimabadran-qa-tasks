@@ -1,11 +1,11 @@
 ///<reference types="cypress"/>
 describe('Task #2', () => {
-  beforeEach(() => {
+  before(() => {
     cy.login();
   });
   it.only('B-Validate that the user can add product', () => {
     cy.contains('Catalog').click().click({ force: true });
-    cy.wait(1000);
+    cy.wait(2000);
     cy.contains('Products').click();
 
     cy.contains('Add new').click();

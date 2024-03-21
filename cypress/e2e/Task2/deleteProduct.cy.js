@@ -1,10 +1,10 @@
 ///<reference types="cypress"/>
 describe('Task #2', () => {
-  beforeEach(() => {
+  before(() => {
     cy.login();
 
     cy.contains('Catalog').click().click({ force: true });
-    cy.wait(1000);
+    cy.wait(2000);
     cy.contains('Products').click();
 
     //add product
@@ -23,7 +23,7 @@ describe('Task #2', () => {
 
   it.only('D- Validate that the user can delete product', () => {
     cy.contains('Catalog').click().click({ force: true });
-    cy.wait(1000);
+    cy.wait(2000);
     cy.contains('Products').click();
 
     //search for product
@@ -32,7 +32,7 @@ describe('Task #2', () => {
     cy.get('#search-products').click();
     //actions
     cy.wait(1500);
-    cy.get('.mastercheckbox').first().check();
+    cy.get('[name="checkbox_products"]').check();
     cy.get('#delete-selected').click();
     cy.wait(1500);
     cy.get('#delete-selected-action-confirmation-submit-button').click();
